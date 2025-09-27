@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'tujuan.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+ void main() {
+ runApp(const MyApp());
+ }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+ class MyApp extends StatelessWidget {
+ const MyApp({super.key});
 
-  @override
+ @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-     debugShowCheckedModeBanner: false,
-     home: Home(),
-    );
-  }
-}
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: {
+        '/': (context) => const HomePage(),
+        '/tujuan': (context) => const TujuanPage(),
+        },
+      );
+    }
+ } 
